@@ -16,6 +16,6 @@ namespace CandidateApp.Domain.AppEntities
         public string LinkedInUrl{ get; set; }
         public string GitHubUrl { get; set; }
         public string Comment { get; set; }
-        public int TimeIntervalInSecond { get; set; }
+        public int? TimeIntervalInSecond { get; set; }
     }
 }

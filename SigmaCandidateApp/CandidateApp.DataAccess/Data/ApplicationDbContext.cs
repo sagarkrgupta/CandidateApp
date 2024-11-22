@@ -20,10 +20,15 @@ namespace CandidateApp.DataAccess.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+                      
+            //modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());            
+           // modelBuilder.ApplyConfigurationsFromAssembly(Assembly.Load("CandidateApp.DataAccess"));
+            
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(ApplicationDbContext)));
+
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
 
         }
     }

@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CandidateApp.DataAccess\CandidateApp.DataAccess.csproj" />
+    <ProjectReference Include="..\CandidateApp.Dtos\CandidateApp.Dtos.csproj" />
+  </ItemGroup>
+
+</Project>

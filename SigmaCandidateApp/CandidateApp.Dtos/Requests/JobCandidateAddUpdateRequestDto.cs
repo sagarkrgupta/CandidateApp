@@ -49,8 +49,6 @@ namespace CandidateApp.Dtos.Requests
 
         public int? TimeIntervalInSecond { get; set; }
 
-        public DateTime InsertedDate { get; set; }
-        public DateTime? UpdatedDate { get; set; }
 
         // Implementing IValidatableObject interface
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

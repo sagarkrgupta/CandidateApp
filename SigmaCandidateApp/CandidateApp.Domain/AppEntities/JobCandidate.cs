@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CandidateApp.Domain.AppEntities
 {
-    public class JobCandidate : BasedEntity<int>
+    public class JobCandidate : BasedEntity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

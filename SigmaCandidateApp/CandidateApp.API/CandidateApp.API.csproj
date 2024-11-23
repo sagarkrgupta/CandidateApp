@@ -17,8 +17,4 @@
     <ProjectReference Include="..\CandidateApp.Business\CandidateApp.Business.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

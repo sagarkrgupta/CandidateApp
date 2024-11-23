@@ -48,6 +48,8 @@ namespace CandidateApp.DataAccess.DataRepositories
             }
         }
 
+
+
         public async Task<IEnumerable<T>> ListAsync(CancellationToken cancellationToken)
         {
             return await _dbSet.AsNoTracking().ToListAsync(cancellationToken);

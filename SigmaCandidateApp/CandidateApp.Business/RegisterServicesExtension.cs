@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CandidateApp.DataAccess.DataRepositories.EntityRepos;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace CandidateApp.Business
         public static void RegisterScopedServices(this IServiceCollection services)
         {            
             services.AddServicesFromAssembly(Assembly.GetExecutingAssembly());
+
+            services.AddScoped<IJobCandidateRepo, JobCandidateRepo>();
 
         }
 

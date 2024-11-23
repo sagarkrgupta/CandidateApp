@@ -12,8 +12,6 @@ namespace CandidateApp.API.Infrastructures
         public static IServiceCollection UseCustomBuilderServices(this IServiceCollection services, IConfiguration configuration)
         {
 
-            // Extensions file config
-            services.AddControllers();  // Adds services for Web API controllers.
 
             // Add Swagger services
             services.AddEndpointsApiExplorer(); // Adds support for API explorer

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CandidateApp.Domain.AppEntities;
+using CandidateApp.Domain.Shared.Utilities;
 using CandidateApp.Dtos.AutoMapper;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace CandidateApp.Dtos.Responeses
 {
     public class JobCandidateItemResponseDto : IMapFrom<JobCandidate>
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
@@ -31,7 +32,9 @@ namespace CandidateApp.Dtos.Responeses
 
             profile.CreateMap<JobCandidate, JobCandidateItemResponseDto>()
                 .ForMember(d => d.InsertedDate, opt => opt.MapFrom(s => s.CreatedDate))
-                .ForMember(d => d.UpdatedDate, opt => opt.Ignore())
+                .ForMember(d => d.UpdatedDate, opt => opt.MapFrom(s => s.LastUpdatedDate))
+                //.ForMember(d => d.Id, opt => opt.Ignore())
+                .ForMember(d => d.Id, opt => opt.MapFrom(src => AESUtil.EncryptIntToString(src.Id)))
                 .ForAllMembers(opt =>
                 {
                     // Apply NullSubstitute only to specific properties

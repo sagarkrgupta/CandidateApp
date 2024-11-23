@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CandidateApp.Domain
 {
-    public class BasedEntity<T>
+    public class BasedEntity
     {
-        public T Id { get; set; }
+        public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? LastUpdatedDate { get; set; }
         public bool IsDeleted { get; set; } //this is for soft delete

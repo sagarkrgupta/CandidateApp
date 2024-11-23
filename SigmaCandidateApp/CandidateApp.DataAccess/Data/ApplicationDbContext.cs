@@ -26,7 +26,7 @@ namespace CandidateApp.DataAccess.Data
             
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(ApplicationDbContext)));
 
-            base.OnModelCreating(modelBuilder);
+            //base.OnModelCreating(modelBuilder);
 
 
 

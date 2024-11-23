@@ -8,6 +8,8 @@ using CandidateApp.API.Infrastructures;
 var builder = WebApplication.CreateBuilder(args);
 
 
+// Extensions file config
+builder.Services.AddControllers();  // Adds services for Web API controllers.
 
 
 builder.Services.UseCustomBuilderServices(builder.Configuration);

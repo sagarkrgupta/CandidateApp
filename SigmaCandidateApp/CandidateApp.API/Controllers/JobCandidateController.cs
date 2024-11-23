@@ -100,7 +100,7 @@ namespace CandidateApp.API.Controllers
             {
 
                 await _jobCandidateService.DeleteCandidateAsync(email, cancellationToken);
-                return Ok("Candidate successfully created/updated.");
+                return Ok("Candidate successfully deleted.");
             }
             catch (OperationCanceledException)
             {
@@ -122,7 +122,7 @@ namespace CandidateApp.API.Controllers
             {
 
                 await _jobCandidateService.DeleteCandidateAsync(id, cancellationToken);
-                return Ok("Candidate successfully created/updated.");
+                return Ok("Candidate successfully deleted.");
             }
             catch (OperationCanceledException)
             {

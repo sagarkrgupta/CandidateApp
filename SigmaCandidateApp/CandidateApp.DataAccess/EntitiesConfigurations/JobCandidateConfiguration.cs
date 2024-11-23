@@ -17,12 +17,17 @@ namespace CandidateApp.DataAccess.EntitiesConfigurations
             builder.HasKey(c => c.Id);
             builder.Property(c => c.FirstName).HasMaxLength(256).IsRequired(true);
             builder.Property(c => c.LastName).HasMaxLength(256).IsRequired(true);
-            builder.Property(c => c.PhoneNumber).HasMaxLength(128).IsRequired(false);
-            builder.Property(c => c.Email).HasMaxLength(1024).IsRequired(true);
+            builder.Property(c => c.PhoneNumber).HasMaxLength(20).IsRequired(false);
+            builder.Property(c => c.Email).HasMaxLength(256).IsRequired(true);            
             builder.Property(c => c.LinkedInUrl).IsRequired(false);
             builder.Property(c => c.GitHubUrl).IsRequired(false);
             builder.Property(c => c.Comment).IsRequired(true);
             builder.Property(c => c.TimeIntervalInSecond).IsRequired(false);
+
+            builder.HasIndex(c => c.Email).IsUnique(); // Unique index on Email
+            builder.HasIndex(c => c.PhoneNumber);
+            builder.HasIndex(c => c.LinkedInUrl);
+            builder.HasIndex(c => c.GitHubUrl);
         }
     }
 }

@@ -10,6 +10,6 @@ namespace CandidateApp.Business.AppServices
 {
     public class JobCandidateAppService : IJobCandidateService
     {
-        Task<List<JobCandidateItemResponseDto>> GetAll();
+        
     }
 }

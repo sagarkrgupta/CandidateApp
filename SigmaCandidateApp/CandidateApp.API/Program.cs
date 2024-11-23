@@ -3,20 +3,32 @@ using CandidateApp.Business;
 using CandidateApp.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using CandidateApp.DataAccess;
+using CandidateApp.API.Infrastructures;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddAutoMapperServices();
-builder.Services.RegisterScopedServices();
 
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.UseCustomBuilderServices(builder.Configuration);
+
+
 
 var app = builder.Build();
 
-app.Services.ApplyMigrationsAndCreateDatabase();
 
-app.MapGet("/", () => "Hello World!");
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+
+// Add custom app builder build to the container.
+app.UseCustomAppBuild();
+
+
+// Configure endpoint mappings (for API controllers)
+app.MapControllers(); // Map the API controllers
+
 
 app.Run();
